@@ -27,7 +27,7 @@ for $m, n = 0, 1, \dots, N-1$, where $N$ is the image's side length (e.g. 512), 
 $$
 \alpha(m) =
 \begin{cases}
-\sqrt{\dfrac{1}{N}}, & m = 0 \\[2mm]
+\sqrt{\dfrac{1}{N}}, & m = 0 \\
 \sqrt{\dfrac{2}{N}}, & m \neq 0
 \end{cases}
 $$
