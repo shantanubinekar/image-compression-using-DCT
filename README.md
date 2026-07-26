@@ -63,7 +63,7 @@ This property is verified directly in the notebook by checking `C.T @ C` against
 Each color channel (Red, Green, Blue) is a 2D array of pixel intensities. The 2D DCT is applied by multiplying by $C$ on both sides:
 
 $$
-D = C^\top \, A \, C
+D = C^\top \ A \ C
 $$
 
 where $A$ is the original channel and $D$ is the resulting matrix of DCT coefficients, the same shape as $A$, but now representing *frequency content* rather than *pixel intensity*.
@@ -71,7 +71,7 @@ where $A$ is the original channel and $D$ is the resulting matrix of DCT coeffic
 Applied to each channel independently:
 
 $$
-D_R = C^\top R \, C, \qquad D_G = C^\top G \, C, \qquad D_B = C^\top B \, C
+D_R = C^\top R \ C \qquad D_G = C^\top G \ C \qquad, D_B = C^\top B \ C
 $$
 
 **Why $C^\top$ on the left and $C$ on the right?** The image is a 2D signal, so the transform needs to be applied along both dimensions — rows and columns. Multiplying by $C^\top$ on the left transforms the columns; multiplying by $C$ on the right transforms the rows. The result is a full 2D frequency decomposition.
