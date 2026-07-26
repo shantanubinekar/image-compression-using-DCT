@@ -71,7 +71,7 @@ where $A$ is the original channel and $D$ is the resulting matrix of DCT coeffic
 Applied to each channel independently:
 
 $$
-D_R = C^\top R \ C \qquad D_G = C^\top G \ C \qquad, D_B = C^\top B \ C
+D_R = C^\top R \ C, \qquad D_G = C^\top G \ C, \qquad D_B = C^\top B \ C
 $$
 
 **Why $C^\top$ on the left and $C$ on the right?** The image is a 2D signal, so the transform needs to be applied along both dimensions — rows and columns. Multiplying by $C^\top$ on the left transforms the columns; multiplying by $C$ on the right transforms the rows. The result is a full 2D frequency decomposition.
@@ -103,15 +103,15 @@ Note that $D_{\text{compressed}}$ is still an $N \times N$ matrix in this implem
 Because $C$ is orthonormal, the transform is invertible by applying $C$ and $C^\top$ from the opposite sides:
 
 $$
-A_{\text{compressed}} = C \, D_{\text{compressed}} \, C^\top
+A_{\text{compressed}} = C \ D_{\text{compressed}} \ C^\top
 $$
 
 Applied per channel:
 
 $$
-R_{\text{compressed}} = C \, D_{R,\text{compressed}} \, C^\top, \qquad
-G_{\text{compressed}} = C \, D_{G,\text{compressed}} \, C^\top, \qquad
-B_{\text{compressed}} = C \, D_{B,\text{compressed}} \, C^\top
+R_{\text{compressed}} = C \ D_{R,\text{compressed}} \ C^\top, \qquad
+G_{\text{compressed}} = C \ D_{G,\text{compressed}} \ C^\top, \qquad
+B_{\text{compressed}} = C \ D_{B,\text{compressed}} \ C^\top
 $$
 
 Because $D_{\text{compressed}}$ had its high-frequency entries zeroed out, this reconstruction is only an **approximation** of the original channel, not an exact copy — the smaller $K$ was, the more information was discarded, and the more the reconstruction visibly deviates from the original (more blur, loss of fine detail).
